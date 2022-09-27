@@ -13,11 +13,11 @@ import com.example.mynoteapp.ui.insert.NoteAddUpdateViewModel
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
-    fun setListNote(listNotes: List<Note>) {
-        val diffCallback = NoteDiffCallback(this.listNotes, listNotes)
+    fun setListNote(listNote: List<Note>) {
+        val diffCallback = NoteDiffCallback(this.listNotes, listNote)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         this.listNotes.clear()
-        this.listNotes.addAll(listNotes)
+        this.listNotes.addAll(listNote)
         diffResult.dispatchUpdatesTo(this)
     }
 
